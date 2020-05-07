@@ -32,8 +32,8 @@ CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
 ```
 
 ## Docker Build
-`docker build .`  
-`docker tag <imageID> jupyterlag:latest`
+`docker build -t jupyterlag:latest .`  
+
 ## Docker Run
 `docker run --rm -p 8888:8888 -v ~/Documents/WorkSpace/JupyterLab:/work --name JupyterLab-on-Docker <Docker_imageID>`
 ## Access
