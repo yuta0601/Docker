@@ -32,9 +32,9 @@ CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
 ```
 
 ## Docker Build
-`docker build -t jupyter-lab:stable .`  
+`docker build -t jupyter-lab:latest .`  
 
 ## Docker Run
-`docker run --rm -p 8888:8888 -v ~/JupyterLaboratory/src:/work --name JupyterLab-on-Docker jupyter-lab:stable`
+`docker run --rm -p 8888:8888 -v ~/JupyterLaboratory/src:/work --name JupyterLab-on-Docker jupyter-lab:latest`
 ## Access
 `localhost:8888`
