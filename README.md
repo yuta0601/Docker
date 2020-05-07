@@ -1,3 +1,3 @@
 # Docker
 
-このリポジトリにpushされたDockerfileはDockerfileにDockerImageが自動的にpushされます。
+Dockerfiles placed in this repository are automatically pushed to DockerHub and DockerImages are generated.
