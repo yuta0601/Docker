@@ -1,0 +1,3 @@
+# Docker
+
+このリポジトリにpushされたDockerfileはDockerfileにDockerImageが自動的にpushされます。
