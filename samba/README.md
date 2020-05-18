@@ -34,3 +34,11 @@ chown 100 /srv/samba
 `-u yuta;0000`  
 `-u guest;0000`  
 ユーザ名;パスワード
+
+## 状況確認
+### コンテナの動作状況確認
+`docker ps -a`
+### コンテナのログを確認
+`docker logs samba`
+### コンテナにログイン
+`docker exec -it samba /bin/bash`
