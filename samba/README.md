@@ -1,17 +1,20 @@
 # samba on Docker
-
-## Docker Pull
-`docker pull yuta0601/samba`
-
+公式のリポジトリがなかったためスター数の多いdperson/sambaを使用
 ## Preparation
 
 ```sh
-mkdir /srv/samba
-chown 100 /srv/samba
+mkdir ~/samba/samba
+chown 777 ~/samba/pub
 ```
 
 ## Docker Run
-`docker run --restart=always --name samba -p 139:139 -p 445:445 -v /srv/samba:/pub -d yuta0601/samba -s "pub;/pub;yes;no;no;yuta,guest" -u "yuta;0000" -u "guest;0000"`
+docker-comopose コマンドで起動するように修正
+
+### docker-compose
+`docker-compose up -d`
+
+### docker run コマンド
+`docker run --restart=unless-stopped --name samba -p 139:139 -p 445:445 -v ~/samba/pub:/mnt/pub:rw -d dperson/samba -s "public;/mnt/pub;yes;no;no;yuta,guest" -u "yuta;0000" -u "guest;0000"`
 
 |オプション|指定内容|
 |---|---|
@@ -35,10 +38,10 @@ chown 100 /srv/samba
 `-u guest;0000`  
 ユーザ名;パスワード
 
-## 状況確認
-### コンテナの動作状況確認
+#### 状況確認
+- コンテナの動作状況確認  
 `docker ps -a`
-### コンテナのログを確認
+- コンテナのログを確認  
 `docker logs samba`
-### コンテナにログイン
+- コンテナにログイン  
 `docker exec -it samba /bin/bash`
