@@ -1,0 +1,7 @@
+jupyter:
+  build: .
+  container_name: JupyterLab
+  ports:
+    - "8888:8888"
+  volumes:
+    - ~/WorkSpace/JupyterLaboratory/src:/work 
