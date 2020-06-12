@@ -3,6 +3,8 @@
 ## Preparation
 ```
 mkdir ~/WorkSpace
+mkdir ~/WorkSpace/JupyterLaboratory
+mkdir ~/WorkSpace/JupyterLaboratory/src
 ```
 
 ## Docker Run
