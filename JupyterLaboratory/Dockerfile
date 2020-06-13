@@ -3,8 +3,8 @@ FROM ubuntu:latest
 # update
 RUN apt-get -y update && apt-get install -y \
 sudo \
-wget \
-vim
+vim \
+wget
 
 #install anaconda3
 WORKDIR /opt
