@@ -4,4 +4,4 @@ jupyter:
   ports:
     - "8888:8888"
   volumes:
-    - ~/WorkSpace/JupyterLaboratory/src:/work 
+    - $PWD/src:/work 
