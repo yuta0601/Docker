@@ -1,10 +1,11 @@
 FROM ubuntu:latest
 
 # update
-RUN apt-get -y update && apt-get install -y \
-    sudo \
-    vim \
-    wget
+RUN apt-get -y update && \
+    apt-get install -y \
+        sudo \
+        vim \
+        wget
 
 #install anaconda3
 WORKDIR /opt
