@@ -17,11 +17,12 @@ RUN wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64.sh && 
 # set path
 ENV PATH /opt/anaconda3/bin:$PATH
 
-COPY requirements.txt /opt/requirements.txt
-
 # update pip and conda
 RUN pip install --upgrade pip && \
-    pip install -r /opt/requirements.txt
+    pip install \
+        keras==2.3 \
+        scipy==1.4.1 \
+        tensorflow-gpu==2.1
 
 WORKDIR /
 
