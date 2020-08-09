@@ -1,7 +1,10 @@
 version: '3' # composeファイルのバーション指定
 services:
   golang: 
-    build: . # Dockerfileの置き場所によってpathは変わります
+    build: ./docker/
     tty: true
     volumes:
-      - .:/go/src
+      - ./GOPATH/src:/go/src
+      - ./GOPATH/pkg:/go/pkg
+      - ./GOPATH/bin:/go/bin
+      - ./src:/src
