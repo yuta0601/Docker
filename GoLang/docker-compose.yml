@@ -4,7 +4,4 @@ services:
     build: ./docker/
     tty: true
     volumes:
-      - ./GOPATH/src:/go/src
-      - ./GOPATH/pkg:/go/pkg
-      - ./GOPATH/bin:/go/bin
       - ./src:/src
