@@ -3,8 +3,8 @@
 ## Preparation
 
 ```sh
-mkdir ~/samba/samba
-chown 777 ~/samba/pub
+mkdir ~/samba/pub
+chmod 777 ~/samba/pub
 ```
 
 ## Docker Run
@@ -14,7 +14,7 @@ docker-comopose コマンドで起動するように修正
 `docker-compose up -d`
 
 ### docker run コマンド
-`docker run --restart=unless-stopped --name samba -p 139:139 -p 445:445 -v ~/samba/pub:/mnt/pub:rw -d dperson/samba -s "public;/mnt/pub;yes;no;no;yuta,guest" -u "yuta;0000" -u "guest;0000"`
+`docker run --restart=unless-stopped --name samba -p 139:139 -p 445:445 -v ~/samba/pub:/mnt/pub:rw -d dperson/samba -s "public;/mnt/pub;yes;no;no;yuta,guest" -u "guest1;0000" -u "guest2;0000"`
 
 |オプション|指定内容|
 |---|---|
@@ -31,11 +31,11 @@ docker-comopose コマンドで起動するように修正
 プラウズの可否;  
 リードオンリーの可否;  
 ゲスト利用の可否;  
-ユーザ１;  
+ユーザ１,
 ユーザ2
 
-`-u yuta;0000`  
-`-u guest;0000`  
+`-u guest1;0000`  
+`-u guest2;0000`  
 ユーザ名;パスワード
 
 #### 状況確認
