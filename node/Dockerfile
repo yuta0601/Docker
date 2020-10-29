@@ -1,4 +1,2 @@
-FROM node:latest
-WORKDIR /src
-RUN npm install -g ionic cordova
-CMD ["bash"]
+FROM node:14
+WORKDIR /app
