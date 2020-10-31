@@ -1,31 +1,17 @@
-const express = require('express');
-const mysql = require('mysql');
+const http = require('http');
+const fs = require('fs');
+const ejs = require('ejs');
 
-const app = express();
+const index_page = fs.readFileSync('./index.ejs', 'utf-8');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'users',
-  password: 'password',
-  database: 'list_app'
-});
+var server = http.createServer(getFromClient);
 
-connection.connect((err) => {
-  if (err) {
-    console.log('error connecting: ' + err.stack);
-    return;
-  }
-  console.log('success');
-});
+server.listen(3000);
+console.log('Server start!');
 
-app.get('/', (req, res) => {
-  connection.query(
-    'SELECT * FROM users',
-    (error, results) => {
-      console.log(results);
-      res.render('hello.ejs');
-    }
-  );
-});
-
-app.listen(3000);
+function getFromClient(request, response) {
+  var content = ejs.render(index_page);
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  response.write(content);
+  response.end();
+}
