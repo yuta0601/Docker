@@ -1,8 +1,0 @@
-version: '3'
-services:
-  mysql:
-    build: ./mysql/   # ビルドコンテキストは mysql
-    volumes:
-      - ./mysql/db:/docker-entrypoint-initdb.d  # initialize
-    environment:
-      - MYSQL_ROOT_PASSWORD=root   #環境変数
