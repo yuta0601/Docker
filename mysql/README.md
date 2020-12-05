@@ -2,12 +2,12 @@
 
 ## 起動方法
 ```
-$ docker-compose up -d
+docker run --rm -d -it --name mysql -e MYSQL_ROOT_PASSWORD=root yuta0601/mysql
 ```
 
 ## コンテナに入る
 ```
-$ docker-compose exec mysql bash
+docker exec -it mysql bash
 ```
 
 ## myslq起動
