@@ -1,4 +1,4 @@
-FROM mysql:5.6
+FROM mysql:latest
 
 # Japanese localization
 RUN apt-get update \
